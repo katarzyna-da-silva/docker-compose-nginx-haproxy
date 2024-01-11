@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  haproxy:
+    image: haproxy:latest
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    ports:
+      - "85:80"
+
+  nginx1:
+    image: nginx:latest
+    ports:
+      - "8081:80"
+
+  nginx2:
+    image: nginx:latest
+    ports:
+      - "8082:80"
